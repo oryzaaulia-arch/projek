@@ -1,0 +1,44 @@
+projek pascal;
+type
+  xHewan = record
+    nama : string; 
+    jenis : string;
+    umur : integer;
+    jenis_kelamin : char;
+    vaksin : char;
+end;
+
+var 
+  hewan : array [1..25] of xHewan;
+  n,i : integer;
+  ulang : char;
+
+function kategoriumur(umur : integer):string;
+begin
+  if umur < 6 then
+    kategoriumur := 'Anakan'
+  if umur <= 24 then
+    kategoriumur := 'Dewasa'
+  else
+    kategoriumur := 'Tua'
+end;
+
+procedure tampilhewan(h : xHewan);
+begin
+  writeln('Nama : ',h.nama);
+  writeln('Jenis : ',h.jenis);
+  writeln('Umur : ',h.umur,'Bulan');
+  writeln('Kategori : ',kategoriumur(h.umur));
+
+  if h.jenis_kelamin = 'J' then
+    writeln('Jenis kelamin : Jantan')
+  else
+    writeln('Jenis kelamin : Betina');
+
+  if h.vaksin = 'y' then
+    writeln('Status vaksin : sudah di vaksin')
+  else
+    writeln('Status vaksin : belum vaksin');
+  writeln;
+end;
+
