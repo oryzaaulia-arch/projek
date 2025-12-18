@@ -1,4 +1,4 @@
-projek pascal;
+projek PetDataManagement;
 type
   xHewan = record
     nama : string; 
@@ -41,4 +41,48 @@ begin
     writeln('Status vaksin : belum vaksin');
   writeln;
 end;
+procedure inputdata();
+begin 
+    clrscr;
+    writeln('=== Data Hewan Peliharaan ===');
+    write('Jumlah hewan: ');
+    readln(n);
 
+    for i := 1 to n do 
+    begin 
+        writeln;
+        writeln('Hewan ke- ',i);
+        write('Nama : ');
+        readln(hewan[i].nama);
+        write('Jenis : ');
+        readln(hewan[i].jenis);
+        write('Umur (bulan):  ');
+        readln(hewan[i].umur);
+        write('Jenis Kelamin (J/B) :  ');
+        readln(hewan[i].jenis_kelamin);
+        write('Sudah vaksin? (y/b) :  ');
+        readln(hewan[i].vaksin);
+        writeln;
+    end;
+end;
+
+
+procedure tampilsemua();
+begin
+    writeln('=== DATA HEWAN PELIHARAAN ===');
+    writeln;
+    for i := 1 to n do 
+    tampilhewan(hewan[i]);
+end;
+
+begin 
+    repeat
+        inputdata();
+        tampilsemua();
+        write ('Mau tambah atau selesai?(y/t) :');
+        readln(ulang);
+    until (ulang = 't') or (ulang = 'T');
+    
+    writeln;
+        writeln('Terima kasih sudah menggunakan jasa kami');
+end.
