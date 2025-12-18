@@ -41,6 +41,7 @@ begin
     writeln('Status vaksin : belum vaksin');
   writeln;
 end;
+
 procedure inputdata();
 begin 
     clrscr;
