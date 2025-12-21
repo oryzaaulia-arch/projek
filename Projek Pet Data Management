@@ -1,4 +1,5 @@
-projek PetDataManagement;
+program PetDataManagement;
+uses crt;
 type
   xHewan = record
     nama : string; 
